@@ -4,7 +4,8 @@ import "./Rightbar.css"
 import { Users } from '../../dummyData';
 import Online from '../Online/Online';
 
-export default function Rightbar({profile}) {
+export default function Rightbar({user}) {
+  const REACT_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
 
   const HomeRightbar= ()=>{
     return(
@@ -23,19 +24,19 @@ export default function Rightbar({profile}) {
         </ul>
         <p className='promotionTitle'>プロモーション広告</p>
         <img 
-        src="assets/promotion/promotion1.jpeg" 
+        src={REACT_FOLDER+"/promotion/promotion1.jpeg" }
         alt="" 
         className='rightbarpromotionImg'
         />
         <p className='promotionName'>ショッピング</p>
         <img 
-        src="assets/promotion/promotion2.jpeg" 
+        src={REACT_FOLDER+"/promotion/promotion2.jpeg" }
         alt="" 
         className='rightbarpromotionImg'
         />
         <p className='promotionName'>カーショップ</p>
         <img 
-        src="assets/promotion/promotion3.jpeg" 
+        src={REACT_FOLDER+"/promotion/promotion3.jpeg" }
         alt="" 
         className='rightbarpromotionImg'
         />
@@ -56,23 +57,23 @@ export default function Rightbar({profile}) {
           <h4 className='rightbarTitle'>あなたの友達</h4>
           <div className="rightbarFollowings">
             <div className="rightbarFollowing">
-              <img src="assets/person/1.jpeg" alt="" className='rightbarFollowingImg'/>
+              <img src={REACT_FOLDER+"/person/1.jpeg"} alt="" className='rightbarFollowingImg'/>
               <span className='rightbarFollowingName'>ゆうき</span>
             </div>
             <div className="rightbarFollowing">
-              <img src="assets/person/2.jpeg" alt="" className='rightbarFollowingImg'/>
+              <img src={REACT_FOLDER+"/person/2.jpeg"} alt="" className='rightbarFollowingImg'/>
               <span className='rightbarFollowingName'>ゆうき</span>
             </div>
             <div className="rightbarFollowing">
-              <img src="assets/person/3.jpeg" alt="" className='rightbarFollowingImg'/>
+              <img src={REACT_FOLDER+"/person/3.jpeg"} alt="" className='rightbarFollowingImg'/>
               <span className='rightbarFollowingName'>ゆうき</span>
             </div>
             <div className="rightbarFollowing">
-              <img src="assets/person/4.jpeg" alt="" className='rightbarFollowingImg'/>
+              <img src={REACT_FOLDER+"/person/4.jpeg"} alt="" className='rightbarFollowingImg'/>
               <span className='rightbarFollowingName'>ゆうき</span>
             </div>
             <div className="rightbarFollowing">
-              <img src="assets/person/5.jpeg" alt="" className='rightbarFollowingImg'/>
+              <img src={REACT_FOLDER+"/person/5.jpeg"} alt="" className='rightbarFollowingImg'/>
               <span className='rightbarFollowingName'>ゆうき</span>
             </div>
           </div>
@@ -82,7 +83,7 @@ export default function Rightbar({profile}) {
   }
   return <div className='Rightbar'>
     <div className="RightbarWrapper">
-      {profile ? <ProfileRigetbar/>:<HomeRightbar/>}
+      {user ? <ProfileRigetbar/>:<HomeRightbar/>}
     </div>
   </div>
   
